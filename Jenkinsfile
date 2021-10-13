@@ -18,7 +18,7 @@ pipeline {
 			echo scm.userRemoteConfigs[0].url
 			echo scm.userRemoteConfigs[0].name
 			echo scm.userRemoteConfigs[0].refspec
-			echo env.JOB_BASE_NAME
+			echo env.JOB_NAME.tokenize('/')[0]
 //			echo "${git_credentials}".[0]
 //			echo '${git_credentials}'.[0]
         }
