@@ -13,6 +13,8 @@ pipeline {
 			echo sh(returnStdout: true, script: 'env')
 			echo '-----------------------------'
 			echo scm.branches[0].name
+			echo params.RepoRef
+			echo params.RepoCredentials
         }
       }
     }
