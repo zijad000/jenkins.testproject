@@ -9,7 +9,7 @@ pipeline {
     stage('test') {
       steps {
         script {
-			echo env
+			echo env.getDisplayName()
         }
       }
     }
