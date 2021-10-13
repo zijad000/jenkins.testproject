@@ -11,7 +11,7 @@ pipeline {
         script {
 			//echo env.getDisplayName()
 			echo sh(returnStdout: true, script: 'env')
-			echo -----------------------------
+			echo '-----------------------------'
 			echo scm.branches[0].name
         }
       }
