@@ -4,6 +4,7 @@ pipeline {
   agent any
   environment {
 	GIT_REPO_NAME="${srcRepoName}"    
+
   }
   stages {
     stage('test') {
@@ -17,6 +18,7 @@ pipeline {
 			echo scm.userRemoteConfigs[0].url
 			echo scm.userRemoteConfigs[0].name
 			echo scm.userRemoteConfigs[0].refspec
+			echo env.JOB_BASE_NAME
 //			echo "${git_credentials}".[0]
 //			echo '${git_credentials}'.[0]
         }
