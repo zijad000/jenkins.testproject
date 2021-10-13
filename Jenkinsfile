@@ -3,8 +3,9 @@
 pipeline {
   agent any
   environment {
-	GIT_REPO_NAME="${srcRepoName}"    
-	PROJECT_NAME=env.JOB_NAME.tokenize('/')[0]
+	GIT_REPO_NAME="${srcRepoName}"   
+	PROJECT_NAM = "${env.GIT_REPO_NAME == "" ? env.JOB_NAME.tokenize('/')[0] : env.GIT_REPO_NAME}"	
+
   }
   stages {
     stage('test') {
