@@ -37,12 +37,13 @@ pipeline {
 
 def getEnvName(customValue, defaultValue) {
     def result
-	if(customValue == null) {
+	if(customValue == null || customValue == '') {
         result = defaultValue;
     }  else {
         result = customValue;
     }
 	echo '*********'
+	echo customValue
 	echo result 
 	echo defaultValue
 	return result
