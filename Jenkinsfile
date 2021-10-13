@@ -13,7 +13,7 @@ pipeline {
 			echo sh(returnStdout: true, script: 'env')
 			echo '-----------------------------'
 			echo scm.branches[0].name
-			echo scm.userRemoteConfigs[0]
+			echo scm.userRemoteConfigs[1].credentialsId
 //			echo "${git_credentials}".[0]
 //			echo '${git_credentials}'.[0]
         }
