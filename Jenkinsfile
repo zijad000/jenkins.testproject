@@ -36,9 +36,13 @@ pipeline {
 }
 
 def getEnvName(customValue, defaultValue) {
-    if("".equals(customValue)) {
-        return defaultValue;
+    def result
+	if("".equals(customValue)) {
+        result = defaultValue;
     }  else {
-        return customValue;
+        result = customValue;
     }
+	echo '*********'
+	echo result 
+	return result
 }
