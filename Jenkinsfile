@@ -16,8 +16,8 @@ pipeline {
 			echo params.RepoRef
 			echo params.RepoCredentials
 			echo scm.credentials-id
-			echo "${git_credentials}".[0]
-			echo '${git_credentials}'.[0]
+//			echo "${git_credentials}".[0]
+//			echo '${git_credentials}'.[0]
         }
       }
     }
