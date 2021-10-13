@@ -4,7 +4,8 @@ pipeline {
   agent any
   environment {
 	GIT_REPO_NAME="${srcRepoName}"   
-	PROJECT_NAME = "${env.GIT_REPO_NAME == "" ? env.JOB_NAME.tokenize('/')[0] : env.GIT_REPO_NAME}"	
+	//PROJECT_NAME = "${env.GIT_REPO_NAME == "" ? env.JOB_NAME.tokenize('/')[0] : env.GIT_REPO_NAME}"	
+	PROJECT_NAME=getEnvName("${srcRepoName}", env.JOB_NAME.tokenize('/')[0])
 
   }
   stages {
@@ -19,7 +20,7 @@ pipeline {
 			echo scm.userRemoteConfigs[0].url
 			echo scm.userRemoteConfigs[0].name
 			echo scm.userRemoteConfigs[0].refspec
-			echo "${PROJECT_NAME}"
+			echo env.PROJECT_NAME
 //			echo env.JOB_NAME.tokenize('/')[0]
 //			echo "${git_credentials}".[0]
 //			echo '${git_credentials}'.[0]
@@ -32,4 +33,12 @@ pipeline {
        cleanWs()     
     }
   }
+}
+
+def getEnvName(customValue, defaultValue) {
+    if("".equals(customValue)) {
+        return defaultValue;
+    }  else {
+        return customValue;
+    }
 }
