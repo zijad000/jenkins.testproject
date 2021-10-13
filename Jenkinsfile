@@ -37,7 +37,7 @@ pipeline {
 
 def getEnvName(customValue, defaultValue) {
     def result
-	if(customValue == null || customValue == '') {
+	if(customValue?.trim()) {
         result = defaultValue;
     }  else {
         result = customValue;
