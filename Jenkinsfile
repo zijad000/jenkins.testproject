@@ -15,7 +15,7 @@ pipeline {
 			echo scm.branches[0].name
 			echo params.RepoRef
 			echo params.RepoCredentials
-			echo scm.credentials-id
+			echo scm.userRemoteConfigs.credentialsId
 //			echo "${git_credentials}".[0]
 //			echo '${git_credentials}'.[0]
         }
