@@ -15,7 +15,7 @@ pipeline {
 			echo scm.branches[0].name
 			echo params.RepoRef
 			echo params.RepoCredentials
-			echo scm.userRemoteConfigs
+			echo scm.userremoteconfigs.credentialsid
 			echo params
         }
       }
