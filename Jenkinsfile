@@ -44,5 +44,6 @@ def getEnvName(customValue, defaultValue) {
     }
 	echo '*********'
 	echo result 
+	echo defaultValue
 	return result
 }
